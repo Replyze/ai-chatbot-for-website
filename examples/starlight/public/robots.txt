@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Starlight's sitemap is sitemap-index.xml, not sitemap.xml: naming it here
+# lets crawlers that only guess the usual names find it.
+Sitemap: https://docs.example.com/sitemap-index.xml

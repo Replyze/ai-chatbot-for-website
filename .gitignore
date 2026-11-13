@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+package-lock.json
+
+# Build output of the examples
+build/
+.docusaurus/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+site/
+dist/
+.astro/
+.next/
+next-env.d.ts
+
+.env
+.DS_Store

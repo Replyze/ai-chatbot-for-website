@@ -1,0 +1,16 @@
+site_name: Example docs
+# Your site's address. MkDocs builds /sitemap.xml from it.
+site_url: https://docs.example.com/
+
+theme:
+  name: material
+  # overrides/main.html adds the chat widget to every page.
+  custom_dir: overrides
+  features:
+    # Moves between pages without reloading; the chat stays open.
+    - navigation.instant
+
+nav:
+  - Introduction: index.md
+  - Install: install.md
+  - FAQ: faq.md

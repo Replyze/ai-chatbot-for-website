@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <!-- Replyze chat widget. Your widget token is in the Replyze dashboard:
+       Settings → Integrations → Install widget. -->
+  <script>
+    window.ReplyzeConfig = { token: 'wgt_YOUR_TOKEN', apiUrl: 'https://client.replyze.chat' };
+  </script>
+  <script src="https://cdn.replyze.chat/widget.js" async></script>
+{% endblock %}

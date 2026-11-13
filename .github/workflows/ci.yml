@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  snippets:
+    name: README snippets match the examples
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: node scripts/check-snippets.mjs
+
+  build-node:
+    name: Build ${{ matrix.example }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - example: docusaurus
+            build: build
+          - example: vitepress
+            build: docs:build
+          - example: starlight
+            build: build
+          - example: nextra
+            build: build
+    defaults:
+      run:
+        working-directory: examples/${{ matrix.example }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: examples/${{ matrix.example }}/package.json
+      # No lockfile on purpose: CI installs what a reader gets with npm install today.
+      - run: npm install --no-audit --no-fund
+      - run: npm run ${{ matrix.build }}
+      - run: node ../../scripts/check-build.mjs ${{ matrix.example }}
+
+  build-mkdocs:
+    name: Build mkdocs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: examples/mkdocs
+    env:
+      NO_MKDOCS_2_WARNING: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: examples/mkdocs/requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - run: mkdocs build --strict
+      - run: node ../../scripts/check-build.mjs mkdocs
+
+  links:
+    name: Links in the READMEs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress --include-fragments --max-retries 3 --timeout 30
+            'README.md' 'examples/*/README.md'
+          jobSummary: true

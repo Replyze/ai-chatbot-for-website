@@ -11,18 +11,40 @@
 
 A practical guide to putting an AI chatbot on your website that answers visitors from your own pages: how it learns the site, what makes its answers trustworthy, how to write pages it can use, and tested code for documentation sites built with Docusaurus, VitePress, MkDocs, Astro Starlight and Nextra. It is for anyone who runs a website, a shop or a docs site and wants an AI that answers what it can and hands the rest to a person.
 
-The examples use [Replyze](https://replyze.chat/?utm_source=github&utm_medium=ai-chatbot-for-website), AI customer support for websites: an AI agent that answers from your website and knowledge base, live chat on your site, and one inbox for web chat, email, WhatsApp and Telegram (Messenger and Instagram are in beta). The advice applies to any website chatbot.
+**[Create a free account](https://client.replyze.chat/register?utm_source=github&utm_medium=ai-chatbot-for-website&utm_content=cta-top)** · [Live demo](https://replyze.chat/?utm_source=github&utm_medium=ai-chatbot-for-website&utm_content=live-demo) · [Docs](https://github.com/Replyze/replyze)
 
-[Website](https://replyze.chat/?utm_source=github&utm_medium=ai-chatbot-for-website) · [Sign up](https://client.replyze.chat/register?utm_source=github&utm_medium=ai-chatbot-for-website) · [Dashboard](https://client.replyze.chat/?utm_source=github&utm_medium=ai-chatbot-for-website) · [Pricing](https://replyze.chat/pricing?utm_source=github&utm_medium=ai-chatbot-for-website) · [Embed code for 25 platforms](https://github.com/Replyze/add-live-chat-to-website)
+The examples use [Replyze](https://replyze.chat/?utm_source=github&utm_medium=ai-chatbot-for-website), AI customer support for websites: an AI agent that answers from your website and knowledge base, live chat on your site, and one inbox for web chat, email, WhatsApp and Telegram (Messenger and Instagram are in beta). The advice applies to any website chatbot.
 
 ## Contents
 
-1. [How it works](#how-it-works)
-2. [A 10-minute setup](#a-10-minute-setup)
+1. [Quickstart](#quickstart)
+2. [How it works](#how-it-works)
 3. [What makes a website chatbot good](#what-makes-a-website-chatbot-good)
 4. [Writing pages the AI can use](#writing-pages-the-ai-can-use)
 5. [AI chatbot for documentation sites](#ai-chatbot-for-documentation-sites): [Docusaurus](#docusaurus) · [VitePress](#vitepress) · [MkDocs](#mkdocs-material) · [Starlight](#astro-starlight) · [Nextra](#nextra) · [Mintlify](#mintlify)
 6. [FAQ](#faq)
+
+## Quickstart
+
+1. **Sign up and add your website.** [Create a free account](https://client.replyze.chat/register?utm_source=github&utm_medium=ai-chatbot-for-website&utm_content=quickstart), open **AI Agent → Knowledge sources**, type your address (or the sitemap's) and click **Add website**. If Replyze already knows your domain, it offers **Learn from yourdomain.com** instead. The status goes from "Finding pages" to "Reading pages, N of M". It takes a few minutes; you can leave the page. The AI agent is part of the paid plans, which you can try first ([Is it free?](#is-it-free)).
+
+   Then click **Pages** next to the website. Filter by **Used**, **Skipped**, **Failed**, **Waiting** and **Left out**; a skipped or failed page says why (robots.txt, noindex, not found, no text, duplicate). Add skip rules for pages that shouldn't answer customers, such as the cart, account pages or old posts.
+2. **Put the chat on your site.** **Settings → Integrations → Install widget** has your snippet with your token:
+
+   ```html
+   <script>
+     window.ReplyzeConfig = {
+       token: 'wgt_YOUR_TOKEN',
+       apiUrl: 'https://client.replyze.chat'
+     };
+   </script>
+   <script src="https://cdn.replyze.chat/widget.js" async></script>
+   ```
+
+   Paste it before `</body>` on every page. Where that is on WordPress, Shopify, Wix, Squarespace, Webflow, Framer, Ghost, React, Next.js, Laravel and more: [add-live-chat-to-website](https://github.com/Replyze/add-live-chat-to-website). Docs sites: [below](#ai-chatbot-for-documentation-sites).
+3. **Test it.** **AI Agent → Test agent** opens a practice chat; under each answer, "Based on" lists the pages, articles, files or taught answers it was given. Ask what your customers ask, then ask something your site doesn't cover and check that the AI says it doesn't know. Then try the chat on your live site.
+
+If the chat doesn't show on your site, check the widget's allowed domains (**Settings → Chat Widget**) and the [troubleshooting list](https://github.com/Replyze/add-live-chat-to-website#troubleshooting).
 
 ## How it works
 
@@ -73,28 +95,6 @@ Everything here is how the Replyze crawler behaves today.
 - **Taught answers**: the right answer you gave the AI after a wrong reply (see [below](#4-you-see-what-it-couldnt-answer-and-fill-the-gap)).
 
 For each question the AI gets the taught answers that match first, then the matching help articles, then the matching sections of your website and files.
-
-## A 10-minute setup
-
-1. **Sign up** at [client.replyze.chat](https://client.replyze.chat/register?utm_source=github&utm_medium=ai-chatbot-for-website).
-2. **Add your website.** **AI Agent → Knowledge sources**, type your address (or the sitemap's) and click **Add website**. If Replyze already knows your domain, it offers **Learn from yourdomain.com** instead. The status goes from "Finding pages" to "Reading pages, N of M". It takes a few minutes; you can leave the page.
-3. **Check the pages.** Click **Pages** next to the website. Filter by **Used**, **Skipped**, **Failed**, **Waiting** and **Left out**; a skipped or failed page says why (robots.txt, noindex, not found, no text, duplicate). Add skip rules for pages that shouldn't answer customers, such as the cart, account pages or old posts.
-4. **Put the chat on your site.** **Settings → Integrations → Install widget** has your snippet with your token:
-
-   ```html
-   <script>
-     window.ReplyzeConfig = {
-       token: 'wgt_YOUR_TOKEN',
-       apiUrl: 'https://client.replyze.chat'
-     };
-   </script>
-   <script src="https://cdn.replyze.chat/widget.js" async></script>
-   ```
-
-   Paste it before `</body>` on every page. Where that is on WordPress, Shopify, Wix, Squarespace, Webflow, Framer, Ghost, React, Next.js, Laravel and more: [add-live-chat-to-website](https://github.com/Replyze/add-live-chat-to-website). Docs sites: [below](#ai-chatbot-for-documentation-sites).
-5. **Test it.** **AI Agent → Test agent** opens a practice chat; under each answer, "Based on" lists the pages, articles, files or taught answers it was given. Ask what your customers ask, then ask something your site doesn't cover and check that the AI says it doesn't know. Then try the chat on your live site.
-
-If the chat doesn't show on your site, check the widget's allowed domains (**Settings → Chat Widget**) and the [troubleshooting list](https://github.com/Replyze/add-live-chat-to-website#troubleshooting).
 
 ## What makes a website chatbot good
 
@@ -300,7 +300,7 @@ import Script from 'next/script';
 <Script src="https://cdn.replyze.chat/widget.js" strategy="afterInteractive" />
 ```
 
-The root layout stays mounted across page changes, so the script loads once. Nextra 4.6.1 fails to build with zod 4.4 and later, which npm installs by default; the example pins zod 4.3.6 with an npm `overrides` entry ([why](examples/nextra/#why-overrides-pins-zod)). Full project: [`examples/nextra`](examples/nextra/).
+The root layout stays mounted across page changes, so the script loads once. Nextra 4.6.1 fails to build with zod 4.4 and later, which npm installs by default; the example pins zod 4.3.6 with an npm `overrides` entry ([why](examples/nextra/README.md#why-overrides-pins-zod)). Full project: [`examples/nextra`](examples/nextra/).
 
 ### Mintlify
 
@@ -355,6 +355,15 @@ At the weekly re-read, or right away if you click **Refresh** on the website or 
 ---
 
 The snippets in [AI chatbot for documentation sites](#ai-chatbot-for-documentation-sites) were built and tested in Chromium against the live widget in November 2026, except Mintlify; the versions are in each example's README. Found something out of date? Open an issue or a pull request.
+
+## Development
+
+CI builds the five examples with `npm install` (or `pip install`) and their build command, then checks that every built page carries the widget and that the sitemap is where the table above says. It also checks that the code in the READMEs matches the example files, and the links in the READMEs. To run the checks locally:
+
+```bash
+node scripts/check-snippets.mjs
+cd examples/vitepress && npm install && npm run docs:build && node ../../scripts/check-build.mjs vitepress
+```
 
 ## More from Replyze
 

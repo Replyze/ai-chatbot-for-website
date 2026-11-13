@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://replyze.chat/?utm_source=github&utm_medium=ai-chatbot-for-website">
+  <a href="https://replyze.chat/?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Replyze/.github/main/assets/logo-on-dark.png">
       <img src="https://raw.githubusercontent.com/Replyze/.github/main/assets/logo-on-light.png" alt="Replyze" height="48">
@@ -11,9 +11,9 @@
 
 A practical guide to putting an AI chatbot on your website that answers visitors from your own pages: how it learns the site, what makes its answers trustworthy, how to write pages it can use, and tested code for documentation sites built with Docusaurus, VitePress, MkDocs, Astro Starlight and Nextra. It is for anyone who runs a website, a shop or a docs site and wants an AI that answers what it can and hands the rest to a person.
 
-**[Create a free account](https://client.replyze.chat/register?utm_source=github&utm_medium=ai-chatbot-for-website&utm_content=cta-top)** · [Live demo](https://replyze.chat/?utm_source=github&utm_medium=ai-chatbot-for-website&utm_content=live-demo) · [Docs](https://github.com/Replyze/replyze)
+**[Create a free account](https://client.replyze.chat/register?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website&utm_content=cta-top)** · [Live demo](https://replyze.chat/?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website&utm_content=live-demo) · [Docs](https://github.com/Replyze/replyze)
 
-The examples use [Replyze](https://replyze.chat/?utm_source=github&utm_medium=ai-chatbot-for-website), AI customer support for websites: an AI agent that answers from your website and knowledge base, live chat on your site, and one inbox for web chat, email, WhatsApp and Telegram (Messenger and Instagram are in beta). The advice applies to any website chatbot.
+The examples use [Replyze](https://replyze.chat/?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website), AI customer support for websites: an AI agent that answers from your website and knowledge base, live chat on your site, and one inbox for web chat, email, WhatsApp and Telegram (Messenger and Instagram are in beta). The advice applies to any website chatbot.
 
 ## Contents
 
@@ -26,7 +26,7 @@ The examples use [Replyze](https://replyze.chat/?utm_source=github&utm_medium=ai
 
 ## Quickstart
 
-1. **Sign up and add your website.** [Create a free account](https://client.replyze.chat/register?utm_source=github&utm_medium=ai-chatbot-for-website&utm_content=quickstart), open **AI Agent → Knowledge sources**, type your address (or the sitemap's) and click **Add website**. If Replyze already knows your domain, it offers **Learn from yourdomain.com** instead. The status goes from "Finding pages" to "Reading pages, N of M". It takes a few minutes; you can leave the page. The AI agent is part of the paid plans, which you can try first ([Is it free?](#is-it-free)).
+1. **Sign up and add your website.** [Create a free account](https://client.replyze.chat/register?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website&utm_content=quickstart), open **AI Agent → Knowledge sources**, type your address (or the sitemap's) and click **Add website**. If Replyze already knows your domain, it offers **Learn from yourdomain.com** instead. The status goes from "Finding pages" to "Reading pages, N of M". It takes a few minutes; you can leave the page. The AI agent is part of the paid plans, which you can try first ([Is it free?](#is-it-free)).
 
    Then click **Pages** next to the website. Filter by **Used**, **Skipped**, **Failed**, **Waiting** and **Left out**; a skipped or failed page says why (robots.txt, noindex, not found, no text, duplicate). Add skip rules for pages that shouldn't answer customers, such as the cart, account pages or old posts.
 2. **Put the chat on your site.** **Settings → Integrations → Install widget** has your snippet with your token:
@@ -84,7 +84,7 @@ Everything here is how the Replyze crawler behaves today.
 - **Duplicates.** A page whose canonical link names another page, a redirect to a page already listed, or a page with exactly the same text as another is used once.
 - **Skip rules.** "Skip pages whose address starts with", for example `/blog, /cart, /account*` (`*` matches anything). Matching pages are removed right away and never read again. Single pages can be left out too.
 - **Refresh.** Every website is read again each week by itself. You can refresh a whole site, or one page with "Read this page again". Until a page is read again, the AI keeps using its previous text.
-- **Page limit.** Each plan has a page limit, for all your websites together. Pages over it wait until there is room. See [pricing](https://replyze.chat/pricing?utm_source=github&utm_medium=ai-chatbot-for-website).
+- **Page limit.** Each plan has a page limit, for all your websites together. Pages over it wait until there is room. See [pricing](https://replyze.chat/pricing?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website).
 - **AI credits.** Reading your website calls no AI model, so it uses no AI credits. Answers do.
 - **Where.** Dashboard → **AI Agent → Knowledge sources**. Owners and admins add and change websites; everyone in the workspace can see them.
 
@@ -122,7 +122,7 @@ The visitor should reach a human in one step, be told honestly when nobody is th
 - When nobody is online, the visitor is told so, asked for an email if they haven't given one, and told roughly when to expect a reply; outside business hours, when the team is back.
 - The AI is told never to promise a handoff itself. If a reply says a person will take over anyway, Replyze hands the chat over, so the promise is kept.
 
-More: [the AI agent handoff guide](https://replyze.chat/blog/ai-agent-handoff-guide?utm_source=github&utm_medium=ai-chatbot-for-website).
+More: [the AI agent handoff guide](https://replyze.chat/blog/ai-agent-handoff-guide?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website).
 
 ### 4. You see what it couldn't answer, and fill the gap
 
@@ -322,7 +322,7 @@ We haven't run this one on a Mintlify site: it follows Mintlify's documented met
 
 ### Is it free?
 
-Live chat you answer yourself has a free plan. The AI agent and learning from your website are part of the paid plans, which you can try first. What each plan includes: [pricing](https://replyze.chat/pricing?utm_source=github&utm_medium=ai-chatbot-for-website).
+Live chat you answer yourself has a free plan. The AI agent and learning from your website are part of the paid plans, which you can try first. What each plan includes: [pricing](https://replyze.chat/pricing?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website).
 
 ### Which languages does it speak?
 
@@ -338,7 +338,7 @@ Yes. The crawler reads any public website, WordPress and WooCommerce included, a
 
 ### What does it store, and where does my content go?
 
-From your website, Replyze keeps each page's address, title and main text, split into sections for search, not the page's HTML. The crawler only reads pages: it never signs in or submits forms. Delete a website under **Knowledge sources** and its pages and text go with it. Conversations are kept in your inbox. To write an answer, the visitor's recent messages and the parts of your content that match are sent to Anthropic's Claude models; Replyze doesn't use chat data to train AI models. Visitor tracking can stay off until the visitor accepts cookies ([how](https://github.com/Replyze/add-live-chat-to-website#cookie-consent)). Details: [privacy policy](https://replyze.chat/privacy?utm_source=github&utm_medium=ai-chatbot-for-website) and [DPA](https://replyze.chat/dpa?utm_source=github&utm_medium=ai-chatbot-for-website).
+From your website, Replyze keeps each page's address, title and main text, split into sections for search, not the page's HTML. The crawler only reads pages: it never signs in or submits forms. Delete a website under **Knowledge sources** and its pages and text go with it. Conversations are kept in your inbox. To write an answer, the visitor's recent messages and the parts of your content that match are sent to Anthropic's Claude models; Replyze doesn't use chat data to train AI models. Visitor tracking can stay off until the visitor accepts cookies ([how](https://github.com/Replyze/add-live-chat-to-website#cookie-consent)). Details: [privacy policy](https://replyze.chat/privacy?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website) and [DPA](https://replyze.chat/dpa?utm_source=github&utm_medium=referral&utm_campaign=ai-chatbot-for-website).
 
 ### What about pages behind a login?
 

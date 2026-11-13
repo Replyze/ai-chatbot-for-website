@@ -81,9 +81,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
+      # 403 and 429 count as working: some sites block CI runners while the page is fine.
       - uses: lycheeverse/lychee-action@v2
         with:
           args: >-
-            --no-progress --include-fragments --max-retries 3 --timeout 30
+            --no-progress --include-fragments --max-retries 3 --retry-wait-time 5 --timeout 30
+            --accept '100..=103,200..=299,403,429'
             'README.md' 'examples/*/README.md'
           jobSummary: true
